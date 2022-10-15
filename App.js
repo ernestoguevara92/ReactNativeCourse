@@ -22,17 +22,7 @@ export default function App() {
 
   return (
     <View style={styles.appContainer}>
-     <View style={styles.inputContainer}>
-      <TextInput 
-        placeholder='Your course goal!' 
-        style={styles.textInput} 
-        onChangeText={goalInputHandler} 
-      />
-      <Button 
-        title='ADD GOAL'
-        onPress={addGoalHandler}
-      />
-     </View>
+     
      <View style={styles.goalsContainer}>
       <FlatList data={courseGoals} 
         renderItem={(itemData) => {
