@@ -33,7 +33,7 @@ export default function App() {
         color="#5e0acc" 
         onPress={startAddGoalHandler}
      />
-     {modalIsVisible && <GoalInput onAddGoal={addGoalHandler} />}
+     <GoalInput visible={modalIsVisible} onAddGoal={addGoalHandler} />
      <View style={styles.goalsContainer}>
       <FlatList data={courseGoals} 
         renderItem={(itemData) => {
