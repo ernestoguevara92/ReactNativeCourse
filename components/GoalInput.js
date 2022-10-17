@@ -22,10 +22,13 @@ function GoalInput(props) {
                     onChangeText={goalInputHandler} 
                     value={enteredGoal}
                 />
-                <Button 
-                    title='ADD GOAL'
-                    onPress={addGoalHandler}
-                />
+                <View>
+                    <Button 
+                        title='ADD GOAL'
+                        onPress={addGoalHandler}
+                    />
+                    <Button title='Cancel' />
+                </View>
             </View>
         </Modal>
     );
