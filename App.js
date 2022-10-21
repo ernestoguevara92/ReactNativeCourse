@@ -34,10 +34,10 @@ export default function App() {
 
   return (
     <View style={styles.appContainer}>
-     <Button title='Add New Goal' 
-        color="#5e0acc" 
-        onPress={startAddGoalHandler}
-     />
+        <Button title='Add New Goal' 
+            color="#99c11f" 
+            onPress={startAddGoalHandler}
+        />
      <GoalInput visible={modalIsVisible} onAddGoal={addGoalHandler} onCancel={endAddGoalHandler} />
      <View style={styles.goalsContainer}>
       <FlatList data={courseGoals} 
