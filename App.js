@@ -60,7 +60,8 @@ const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
     paddingTop: 60,
-    paddingHorizontal: 16
+    paddingHorizontal: 16,
+    backgroundColor: '#1e0800',
   },
   goalsContainer: {
     flex: 6,
