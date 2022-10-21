@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
     textInput: {
         borderWidth: 1,
         borderColor: '#ccc',
+        borderRadius: 8,
         backgroundColor: '#fffaff',
         color: '#120438',
         fontSize: 18,
