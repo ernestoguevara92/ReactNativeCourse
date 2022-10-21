@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
     textInput: {
         borderWidth: 1,
         borderColor: '#ccc',
+        backgroundColor: '#fffaff',
         width: '90%',
         padding: 8
       },
