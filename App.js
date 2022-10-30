@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { StyleSheet, View, FlatList, Button } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import GoalItem from './components/GoalItem';
@@ -73,11 +73,10 @@ export default function App() {
   }
 
   return (
-    <View 
-      style={{flex: 1, alignItems: 'center', justifyContent: 'center'}} 
-      onLayout={onLayoutRootView}>
+    <View onLayout={onLayoutRootView}
+      style={styles.appContainer}>
       <StatusBar style="auto" />
-      <View style={styles.appContainer}>
+      <View>
           <Button title='Add New Goal' 
               color="#99c11f" 
               onPress={startAddGoalHandler}
