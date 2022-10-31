@@ -73,30 +73,32 @@ export default function App() {
   }
 
   return (
-    <View onLayout={onLayoutRootView}
-      style={styles.appContainer}>
+    <>
       <StatusBar style="auto" />
-      <View>
-          <Button title='Add New Goal' 
-              color="#99c11f" 
-              onPress={startAddGoalHandler}
-          />
-      <GoalInput visible={modalIsVisible} onAddGoal={addGoalHandler} onCancel={endAddGoalHandler} />
-      <View style={styles.goalsContainer}>
-        <FlatList data={courseGoals} 
-          renderItem={(itemData) => {
-            return <GoalItem 
-              text={itemData.item.text} 
-              id={itemData.item.id}
-              onDeleteItem={deleteGoalHandler} />;
-          }}
-          keyExtractor={(item, index) => {
-            return item.id;
-          }}
-          alwaysBounceVertical={false} />
+      <View
+        onLayout={onLayoutRootView}
+        style={styles.appContainer}
+        >
+            <Button title='Add New Goal' 
+                color="#99c11f" 
+                onPress={startAddGoalHandler}
+            />
+        <GoalInput visible={modalIsVisible} onAddGoal={addGoalHandler} onCancel={endAddGoalHandler} />
+        <View style={styles.goalsContainer}>
+          <FlatList data={courseGoals} 
+            renderItem={(itemData) => {
+              return <GoalItem 
+                text={itemData.item.text} 
+                id={itemData.item.id}
+                onDeleteItem={deleteGoalHandler} />;
+            }}
+            keyExtractor={(item, index) => {
+              return item.id;
+            }}
+            alwaysBounceVertical={false} />
+        </View>
       </View>
-      </View>
-    </View>
+    </>
   );
 } 
 
