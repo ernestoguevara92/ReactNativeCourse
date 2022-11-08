@@ -4,6 +4,7 @@ import { View, TextInput, Button, StyleSheet, Modal, Image } from 'react-native'
 function GoalInput(props) {
     const [enteredGoal, setEnteredGoal] = useState('');
     const [enteredDate, setEnteredDate] = useState('');
+    const [enteredPriority, setEnteredPriority] = useState('');
 
     function goalInputHandler(enteredText) {
         setEnteredGoal(enteredText);
@@ -29,6 +30,12 @@ function GoalInput(props) {
                     style={styles.textInput} 
                     onChangeText={goalInputHandler} 
                     value={enteredDate} 
+                />
+                 <TextInput
+                    placeholder='Priority!' 
+                    style={styles.textInput} 
+                    onChangeText={goalInputHandler} 
+                    value={enteredPriority} 
                 />
                 <View  style={styles.buttonContainer} >
                     <View style={styles.button}>
