@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { View, TextInput, Button, StyleSheet, Modal, Image } from 'react-native';
+import { NativeBaseProvider, Box, Radio } from 'native-base';
 
 function GoalInput(props) {
     const [enteredGoal, setEnteredGoal] = useState('');
@@ -31,12 +32,16 @@ function GoalInput(props) {
                     onChangeText={goalInputHandler} 
                     value={enteredDate} 
                 />
-                 <TextInput
-                    placeholder='Priority!' 
-                    style={styles.textInput} 
-                    onChangeText={goalInputHandler} 
-                    value={enteredPriority} 
-                />
+                <Radio.Group name="myRadioGroup" accessibilityLabel="favorite number" value={value} onChange={nextValue => {
+                    setValue(nextValue);
+                    }}>
+                    <Radio value="one" my={1}>
+                        One
+                    </Radio>
+                    <Radio value="two" my={1}>
+                        Two
+                    </Radio>
+                    </Radio.Group>;
                 <View  style={styles.buttonContainer} >
                     <View style={styles.button}>
                         <Button 
