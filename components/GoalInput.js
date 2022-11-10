@@ -38,8 +38,8 @@ function GoalInput(props) {
                         setEnteredDate(currentDate);
                     }}
                 />
-                <Radio.Group name="myRadioGroup" accessibilityLabel="favorite number" value={value} onChange={nextValue => {
-                    setValue(nextValue);
+                <Radio.Group name="myRadioGroup" accessibilityLabel="favorite number" value={enteredPriority} onChange={nextValue => {
+                    setEnteredPriority(nextValue);
                     }}>
                     <Radio value="one" my={1}>
                         One
