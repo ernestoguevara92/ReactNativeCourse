@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { View, TextInput, Button, StyleSheet, Modal, Image } from 'react-native';
 import { NativeBaseProvider, Box, Radio } from 'native-base';
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 function GoalInput(props) {
     const [enteredGoal, setEnteredGoal] = useState('');
-    const [enteredDate, setEnteredDate] = useState('');
+    const [enteredDate, setEnteredDate] = useState(new Date());
     const [enteredPriority, setEnteredPriority] = useState('');
 
     function goalInputHandler(enteredText) {
@@ -26,11 +27,16 @@ function GoalInput(props) {
                     onChangeText={goalInputHandler} 
                     value={enteredGoal}
                 />
-                <TextInput
-                    placeholder='Input Date!' 
-                    style={styles.textInput} 
-                    onChangeText={goalInputHandler} 
-                    value={enteredDate} 
+                <DateTimePicker 
+                    testID="dateTimePicker"
+                    value={enteredDate}
+                    mode='date'
+                    is24Hour={true}
+                    display="default"
+                    onChange={(event, selectedDate) => {
+                        const currentDate = selectedDate || date;
+                        setEnteredDate(currentDate);
+                    }}
                 />
                 <Radio.Group name="myRadioGroup" accessibilityLabel="favorite number" value={value} onChange={nextValue => {
                     setValue(nextValue);
