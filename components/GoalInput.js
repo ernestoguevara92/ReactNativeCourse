@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { View, TextInput, Button, StyleSheet, Modal, Image } from 'react-native';
+import { View, TextInput, Button, StyleSheet, Modal, Image, Text } from 'react-native';
 import { NativeBaseProvider, Box, Radio } from 'native-base';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
@@ -21,12 +21,14 @@ function GoalInput(props) {
         <Modal visible={props.visible} animationType="fade" >
             <View style={styles.inputContainer}>
                 <Image style={styles.image} source={require('../assets/images/goal.png')} />
+                <Text>
                 <TextInput 
                     placeholder='Input your goal!' 
                     style={styles.textInput} 
                     onChangeText={goalInputHandler} 
                     value={enteredGoal}
                 />
+                </Text>
                 <DateTimePicker 
                     testID="dateTimePicker"
                     value={enteredDate}
@@ -41,10 +43,13 @@ function GoalInput(props) {
                 <Radio.Group name="myRadioGroup" accessibilityLabel="favorite number" value={enteredPriority} onChange={nextValue => {
                     setEnteredPriority(nextValue);
                     }}>
-                    <Radio value="one" my={1}>
+                    <Radio value="high" my={1}>
                         One
                     </Radio>
-                    <Radio value="two" my={1}>
+                    <Radio value="medium" my={1}>
+                        Two
+                    </Radio>
+                    <Radio value="low" my={1}>
                         Two
                     </Radio>
                     </Radio.Group>;
