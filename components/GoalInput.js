@@ -29,7 +29,7 @@ function GoalInput(props) {
                     value={enteredGoal}
                 />
                 </Text>
-                <DateTimePicker 
+                {/* <DateTimePicker 
                     testID="dateTimePicker"
                     value={enteredDate}
                     mode='date'
@@ -39,7 +39,8 @@ function GoalInput(props) {
                         const currentDate = selectedDate || date;
                         setEnteredDate(currentDate);
                     }}
-                />
+                /> */}
+                <NativeBaseProvider>
                 <Radio.Group name="myRadioGroup" accessibilityLabel="favorite number" value={enteredPriority} onChange={nextValue => {
                     setEnteredPriority(nextValue);
                     }}>
@@ -53,6 +54,7 @@ function GoalInput(props) {
                         Two
                     </Radio>
                     </Radio.Group>;
+                </NativeBaseProvider>
                 <View  style={styles.buttonContainer} >
                     <View style={styles.button}>
                         <Button 
