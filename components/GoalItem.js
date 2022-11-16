@@ -1,7 +1,9 @@
 import { StyleSheet, View, Text, Pressable } from 'react-native';
+import { NativeBaseProvider } from 'native-base';
 
 function GoalItem(props) {
     return (
+        <NativeBaseProvider>
         <View style={styles.goalItem}>
             <Pressable android_ripple={{color: 'red'}} 
                 onPress={props.onDeleteItem.bind(this, props.id)}
@@ -10,6 +12,7 @@ function GoalItem(props) {
                 <Text style={styles.goalItemText}>{props.text}</Text>
             </Pressable>
         </View>
+        </NativeBaseProvider>
     )
 }
 
