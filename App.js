@@ -3,7 +3,7 @@ import { StyleSheet, View, FlatList, Button } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import GoalItem from './components/GoalItem';
 import GoalInput from './components/GoalInput';
-import * as SplashScreen from 'expo-splash-screen';
+import { NativeBaseProvider } from 'native-base';
 
 // Keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync();
@@ -75,6 +75,7 @@ export default function App() {
   return (
     <>
       <StatusBar style="auto" />
+      <NativeBaseProvider>
       <View
         onLayout={onLayoutRootView}
         style={styles.appContainer}
@@ -98,6 +99,7 @@ export default function App() {
             alwaysBounceVertical={false} />
         </View>
       </View>
+      </NativeBaseProvider>
     </>
   );
 } 
